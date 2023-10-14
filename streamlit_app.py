@@ -4,7 +4,8 @@ import math
 import pandas as pd
 import streamlit as st
 import numpy as np
+from st_aggrid import AgGrid
 
-df = pd.DataFrame(np.random.randn(10, 5), columns=("Idea", "Advantages", "Disadvantages", "Pivot")
-
-st.table(df)
+df = pd.DataFrame({'Ideas': [1, 2, 3], 'Pivot': [4, 5, 6]})
+grid_return = AgGrid(df, editable=True)
+new_df = grid_return['data']
