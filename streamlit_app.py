@@ -15,6 +15,10 @@ forums](https://discuss.streamlit.io).
 In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
+df = pd.DataFrame(np.random.randn(10, 10), columns=("col %d" % i for i in range(5)))
+
+st.table(df)
+
 
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
